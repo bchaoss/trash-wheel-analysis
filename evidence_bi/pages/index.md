@@ -2,6 +2,8 @@
 title: Dashboard - Trash Wheels' Collection
 ---
 
+Data model reference: [dbt doc](/pipeline)
+
 ```sql latest_month
 select 
   max(date) as month
