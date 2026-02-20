@@ -5,7 +5,7 @@ env:
   DBT_PROJECT_DIR: ${{ github.workspace }}/dbt_pipeline
   DBT_PROFILES_DIR: ${{ github.workspace }}/dbt_pipeline/.dbt
   BI_PROJECT_DIR: ${{ github.workspace }}/evidence_bi
-  PAGE_DEPLOY_DIR: ${{ github.workspace }}/evidence_bi/build/evidence_bi
+  PAGE_DEPLOY_DIR: ${{ github.workspace }}/evidence_bi/build
 
 # Controls when the workflow will run
 on:
@@ -93,7 +93,7 @@ jobs:
       - name: Upload documentation artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ env.PAGE_DEPLOY_DIR }}
+          path: ${{ env.PAGE_DEPLOY_DIR }}/evidence_bi
         
 
   deploy-page:

@@ -2,8 +2,10 @@
   "name": "my-evidence-project",
   "version": "0.0.1",
   "scripts": {
-    "build": "EVIDENCE_BUILD_DIR=./build/evidence_bi evidence build",
+    "build:evidence": "EVIDENCE_BUILD_DIR=./build/evidence_bi evidence build",
     "build:strict": "evidence build:strict",
+    "copy:legacy": "mkdir -p build/evidence_bi/pipeline && cp -r build/pipeline/* build/evidence_bi/pipeline",
+    "build": "npm run build:evidence && npm run copy:legacy",
     "dev": "evidence dev --open /",
     "test": "evidence build",
     "sources": "evidence sources",
